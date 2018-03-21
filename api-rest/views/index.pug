@@ -1,0 +1,26 @@
+extends layout
+
+block content
+    table.table
+        thead.thead
+            tr
+                th(scope='col') Title
+                th(scope='col') Description
+                th(scope='col') Url
+                th(scope='col')
+                th(scope='col')
+
+        tbody
+            each favorito in favoritos
+                tr
+                    td #{favorito.title}
+                    td #{favorito.description}
+                    td #{favorito.url}
+                    td
+                        a.btn.btn-dark(href='/api/listOne' + favorito._id, type='role') Show
+                    td
+                        button.btn.btn-danger(type='button') Delete
+
+
+    button.btn.btn-success(type='button') Create
+
